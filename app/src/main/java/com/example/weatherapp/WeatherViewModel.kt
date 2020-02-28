@@ -76,7 +76,7 @@ class WeatherViewModel @Inject constructor(private val weatherUseCase: WeatherUs
                 if (result.isSuccessful()) {
                     error.set(false)
                     val response: WeatherForecastResponse? = result.body()
-                    weatherListData.value = response?.list
+                    weatherListData.postValue( response?.list)
                 } else {
                     errorData.value = result.message()
                 }

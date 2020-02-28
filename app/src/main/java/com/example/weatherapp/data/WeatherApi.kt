@@ -10,7 +10,7 @@ interface WeatherApi {
                             @Query("APPID") appId : String,@Query ("units") units:String="metric"): Response<WeatherResponse>
 
 
-    @GET("data/2.5/forecast/daily")
+    @GET("data/2.5/forecast")
     suspend fun getWeatherForecast(@Query("zip") query: String,
                                @Query("APPID") appId : String,@Query("cnt")cnt:Int=7,@Query ("units") units:String="metric"): Response<WeatherForecastResponse>
 
